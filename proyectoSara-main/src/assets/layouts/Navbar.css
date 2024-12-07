@@ -1,0 +1,56 @@
+.lista{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.lista Link{
+    color: white;
+    text-decoration: none;
+}
+
+/* Icono del carrito y modal */
+.nav-item.cart-icon {
+    cursor: pointer;
+    padding: 0 10px;
+    position: absolute;
+    top:  1px;
+    right: 2px;
+  }
+  
+  .cart-icon-img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 80vh;
+    background: rgba(82, 76, 76, 0.781);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .close-modal {
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  } 
