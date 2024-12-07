@@ -10,25 +10,19 @@ const Productos = () => {
   const [expandido, setExpandido] = useState(null);
   const { category } = useParams();
 
+
   const alternarDescripcion = (idProducto) => {
     setExpandido(expandido === idProducto ? null : idProducto);
   };
 
   const nombresCategorias = {
     Shoes: "Electrónicos",
-    Clothing: "Ropa",
+    Clothes: "Ropa",
     Miscellaneous: "Misceláneos",
   };
 
   const tituloCategoria = nombresCategorias[category] || category;
 
-  /* const addToCart = (producto) => {
-
-
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push(producto);
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }; */
   
   const addToCart = (producto) => {
     // Obtiene el carrito actual desde localStorage
@@ -69,14 +63,14 @@ const Productos = () => {
               <img className="card-img-top img-prod" src={producto.images[0]} alt={producto.title} />
               <div className="card-body">
                 <h2 className="card-title fs-4">{producto.title}</h2>
-                <p>{producto.price} USD</p>
                 <p className="card-text">
                   {expandido === producto.id ? producto.description : `${producto.description.slice(0, 100)}...`}
                   <a onClick={() => alternarDescripcion(producto.id)}>
                     {expandido === producto.id ? "Ver menos" : "Ver más"}
                   </a>
                 </p>
-                <button className="btn btn-dark" onClick={() => addToCart(producto)}>
+                <p className='text-success h5 fw-bold'>{producto.price} USD</p>
+                <button className="btn btn-dark mt-2" onClick={() => addToCart(producto)}>
                   Añadir al carrito
                 </button>
               </div>

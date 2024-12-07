@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import Navbar  from './assets/layouts/navbar';
+import Navbar  from './assets/layouts/Navbar';
 import Home from './assets/pages/home/home';
-import Productos from './assets/pages/products/products';
+import Productos from './assets/pages/products/Products';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {

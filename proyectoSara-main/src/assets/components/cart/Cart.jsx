@@ -78,49 +78,50 @@ const Cart = () => {
 
   return (
     <div>
-      <h2>Carrito de compras</h2>
+      <h2 className='text-light fw-bold mb-5'>Carrito de compras</h2>
       {cartItems.length === 0 ? (
-        <p>Tu carrito está vacío</p>
+        <p className='text-light'>Tu carrito está vacío</p>
       ) : (
         <div>
           {cartItems.map((item) => (
             <div key={item.id}>
-             
-              <img 
-                  src={item.image}                    
-                  width="50" 
-                  onError={(e) => {
-                    e.target.src = "ruta_de_imagen_placeholder.jpg"; // Imagen de respaldo
-                  }}
+             <div className='d-flex flex-column m-3 justify-content-center align-items-center'>
+                <img className='m-2' src={item.images}  width="100" onError={(e) => {
+                      e.target.src = "ruta_de_imagen_placeholder.jpg"; // Imagen de respaldo
+                    }} 
                 />
-              <div>{item.title}</div>
-              <div>{item.price} USD</div>
-              <div>
+                <div className='m-2 text-light fw-bold h5'>{item.title}</div>
+                <div className='text-light fw-bold h5'> Precio: {item.price} USD</div>
+                <div className='d-flex justify-content-center align-items-center'>
                 <button
-                  className="btn btn-light"
+                  className="btn btn-light m-2"
                   onClick={() => decreaseQuantity(item.id)}
                 >
                   -
                 </button>
-                <span>{item.quantity}</span>
+                <span className='text-light'>{item.quantity}</span>
                 <button
-                  className="btn btn-light"
+                  className="btn btn-light m-2"
                   onClick={() => increaseQuantity(item.id)}
                 >
                   +
                 </button>
+              
               </div>
-              <div>{item.price * item.quantity} USD</div>
+                </div>
+             
               <button
-                className="btn btn-dark"
+                className="btn btn-light"
                 onClick={() => removeFromCart(item.id)}
               >
                 Eliminar
               </button>
+              <div className='mt-2'>----------------------------------------------------------------------</div>
             </div>
           ))}
-          <h3>Total: {totalPrice} USD</h3>
-          <button className="btn btn-dark" onClick={clearCart}>
+    
+          <h3 className='text-light mt-4'>Total: {totalPrice} USD</h3>
+          <button className="btn btn-light" onClick={clearCart}>
             Limpiar carrito
           </button>
         </div>

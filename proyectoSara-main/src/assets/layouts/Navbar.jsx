@@ -25,12 +25,12 @@ const Navbar = () => {
                     <div onClick={toggleDropdown}>Categorías</div>
                     {isDropdownOpen && (
                         <ul className="secciones">
-                            <Link to="/bycategory/Men">Hombre</Link>
-                            <Link to="/byCategory/Women">Mujer</Link>
-                            <Link to="/byCategory/accesories">Accesorios</Link>
+                            <Link to="/bycategory/Ropa">Ropa</Link>
+                            <Link to="/byCategory/Shoes">Electrónicos</Link>
+                            <Link to="/byCategory/Miscellaneous">Variedades</Link>
                         </ul>
                     )}
-                    <li className="nav-item cart-icon" onClick={toggleModal}>
+                    <li className="nav-item mt-3 cart-icon position-fixed" onClick={toggleModal}>
                         <img src={CartIcon} alt="Cart" className="cart-icon-img" />
                     </li>
                 </ul>
@@ -40,7 +40,7 @@ const Navbar = () => {
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal-content">
-            <button className="close-modal" onClick={toggleModal}>X</button>
+            <button className="close-modal bg-light text-dark" onClick={toggleModal}>X</button>
             <Cart /> {/* Renderizamos el componente Cart dentro del modal */}
           </div>
         </div>

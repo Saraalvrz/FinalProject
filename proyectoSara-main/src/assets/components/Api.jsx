@@ -20,7 +20,7 @@ export const filtrarProductosPorCategoria = (productos, categoria) => {
     
     const mapaCategorias = {
         'Shoes': 2,
-        'Clothing': 1,
+        'Clothes': 1,
         'Miscellaneous': 3
     };
 
